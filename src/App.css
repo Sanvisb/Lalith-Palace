@@ -1,0 +1,142 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2.5rem;
+  padding: 2.5rem 3rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s;
+}
+
+.navbar a:hover {
+  opacity: 0.6;
+}
+
+.content-wrapper {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding-bottom: 4rem;
+}
+
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* Align image towards center/text if needed, or left */
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.image-section img {
+  width: 100%;
+  max-width: 600px; /* Limit size */
+  height: auto;
+  border-radius: 2px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  object-fit: cover;
+}
+
+.text-section {
+  flex: 1;
+  padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align text to left of this section? Reference shows centered text on the right side. */
+  text-align: center;
+  align-items: center;
+}
+
+.title {
+  font-family: var(--font-serif); /* Or 'Impact' style if needed, but Serif is elegant */
+  font-size: 3.5rem;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--color-subtext);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.location {
+  font-size: 1rem;
+  color: var(--color-accent);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.description-box {
+  max-width: 450px;
+  color: #555;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.main-desc {
+  margin-bottom: 2rem;
+  font-style: italic; /* Elegant touch */
+}
+
+.address-block {
+  text-align: center;
+  font-style: normal;
+}
+
+.address-block strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-primary);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+  
+  .image-section {
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+  }
+  
+  .text-section {
+    padding: 2rem 1.5rem;
+  }
+  
+  .navbar {
+    justify-content: center;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+}

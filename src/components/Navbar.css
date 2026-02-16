@@ -1,0 +1,78 @@
+.navbar-component {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    background-color: var(--color-bg);
+    height: 80px; /* Standard navbar height */
+    position: relative;
+    z-index: 100;
+}
+
+.navbar-component.transparent {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: none;
+}
+
+.navbar-component.transparent .nav-link {
+    color: white; /* Make text white on transparent background */
+}
+
+.navbar-component.transparent .nav-link:hover,
+.navbar-component.transparent .nav-link.active {
+    color: var(--color-accent); /* Keep accent color for hover/active */
+}
+
+.logo-container-nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    height: 60px; /* Fits within the navbar */
+    width: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-accent);
+}
+
+.nav-link.active {
+    color: var(--color-accent);
+    border-bottom: 2px solid var(--color-accent);
+}
+
+@media (max-width: 768px) {
+    .navbar-component {
+        justify-content: center;
+        padding: 1rem;
+    }
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.8rem;
+    }
+}

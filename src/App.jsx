@@ -1,0 +1,23 @@
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import Accommodations from './pages/Accommodations';
+import Facilities from './pages/Facilities';
+import Posts from './pages/Posts';
+import Booking from './pages/Booking';
+function App() {
+  return (
+    <div className="flex flex-col min-h-screen w-full">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/accommodations" element={<Accommodations />} />
+        <Route path="/facilities" element={<Facilities />} />
+        <Route path="/posts" element={<Posts />} />
+        <Route path="/booking" element={<Booking />} />
+      </Routes>
+    </div>
+  )
+}
+
+export default App

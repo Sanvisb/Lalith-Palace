@@ -1,0 +1,182 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 80vh;
+}
+
+/* Removed sidebar-left, logo-container, map-container-sidebar */
+
+.hero-content {
+  display: flex;
+  height: 100vh; /* Full viewport height */
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/lali5.jpeg');
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  max-width: 100%;
+}
+
+/* Removed separate hero-image-container and hero-image styles as they are no longer used */
+
+.text-section {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white; /* Text is white on dark overlay */
+  margin-top: 60px; /* Offset for navbar */
+}
+
+/* Override title colors for the hero section */
+.text-section .title {
+    color: #fff;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.15em;
+}
+
+.text-section .subtitle {
+    color: var(--color-accent);
+    letter-spacing: 0.3em;
+    margin-bottom: 2rem;
+}
+
+.text-section .location {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.description-box {
+    background: rgba(0,0,0,0.5); /* Semi-transparent box for readability */
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 600px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.description-box .main-desc {
+    color: #f0f0f0; /* Dark white / Off-white */
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.address-block {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #fff; /* Pure white */
+    font-weight: bold;
+}
+
+.address-block strong {
+    color: #fff;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem; /* Slightly larger for heading */
+    font-weight: 800; /* Extra bold for "Address:" */
+}
+
+.address-block p {
+    font-weight: 700; /* Bold for lines */
+    margin: 0.2rem 0;
+}
+
+.map-section-bottom {
+    width: 100%;
+    padding: 2rem 4rem; /* Or 0 if you want full bleed */
+    background-color: var(--color-bg);
+}
+
+@media (max-width: 900px) {
+    .hero-content {
+        flex-direction: column;
+    }
+    .text-section {
+        padding: 2rem;
+    }
+    .navbar-component {
+        padding: 1rem;
+    }
+    .map-section-bottom {
+        padding: 1rem;
+    }
+}
+
+/* Services Section */
+.services-section {
+    padding: 4rem 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.services-title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--color-text-primary);
+    font-family: var(--font-serif);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 250px;
+    text-align: center;
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #a08436; /* Gold/yellowish tone */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    color: white;
+    box-shadow: 0 4px 10px rgba(160, 132, 54, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.service-icon:hover {
+    transform: scale(1.1);
+}
+
+.service-icon svg {
+    width: 40px;
+    height: 40px;
+}
+
+.service-item h3 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    color: var(--color-text-primary);
+    font-family: var(--font-serif);
+    font-weight: 600;
+}
+
+.service-item p {
+    color: var(--color-subtext);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        gap: 2rem;
+    }
+}
