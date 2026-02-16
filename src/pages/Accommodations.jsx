@@ -38,8 +38,8 @@ function Accommodations() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {rooms.map(room => (
           <div key={room.id} className="bg-white shadow-md rounded overflow-hidden transition-transform duration-200 hover:-translate-y-1">
-            <div className="h-[300px] overflow-hidden bg-[#f5f5f5]">
-                <img src={room.image} alt={room.title} className="w-full h-full object-contain" />
+            <div className="aspect-[4/3] w-full overflow-hidden bg-[#f5f5f5]">
+                <img src={room.image} alt={room.title} className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
             </div>
             <div className="p-6">
                 <h3 className="mb-2 text-text-primary font-serif text-xl font-semibold">{room.title}</h3>

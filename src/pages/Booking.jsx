@@ -30,8 +30,8 @@ Travelling with pets: ${hasPets ? 'Yes' : 'No'}
   };
 
   return (
-    <div className="flex flex-col w-full min-h-screen pt-[100px] bg-bg-color items-center">
-      <div className="w-full max-w-4xl px-4 py-12">
+    <div className="flex flex-col w-full min-h-screen pt-24 bg-bg-color items-center">
+      <div className="w-full max-w-4xl px-4 py-6">
         <h1 className="text-4xl text-center font-serif text-text-primary mb-2 uppercase tracking-widest">
           Book Your Stay
         </h1>

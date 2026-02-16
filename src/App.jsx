@@ -5,6 +5,7 @@ import Accommodations from './pages/Accommodations';
 import Facilities from './pages/Facilities';
 import Posts from './pages/Posts';
 import Booking from './pages/Booking';
+import Footer from './components/Footer';
 function App() {
   return (
     <div className="flex flex-col min-h-screen w-full">
@@ -16,6 +17,7 @@ function App() {
         <Route path="/posts" element={<Posts />} />
         <Route path="/booking" element={<Booking />} />
       </Routes>
+      <Footer />
     </div>
   )
 }
