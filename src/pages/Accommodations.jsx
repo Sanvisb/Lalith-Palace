@@ -2,31 +2,31 @@ function Accommodations() {
   const rooms = [
     {
        id: 1,
-       image: '/bedroom6.jpeg',
+       image: `${import.meta.env.BASE_URL}bedroom6.jpeg`,
        title: 'Ground Floor – Room 1',
        description: 'A well maintained and cozy room designed for a comfortable stay, featuring clean interior, soft lighting and peaceful ambience ideal for rest and relaxation'
     },
     {
       id: 2,
-      image: '/bedroom1.jpeg',
+      image: `${import.meta.env.BASE_URL}bedroom1.jpeg`,
       title: 'Ground Floor – Room 2',
       description: 'A balance between minimalist restraint and personal expression, often pairing sleek modern furniture with luxurious comfort'
     },
     {
       id: 3,
-      image: '/upperbedroom1.jpeg',
+      image: `${import.meta.env.BASE_URL}upperbedroom1.jpeg`,
       title: 'First Floor – Room 1',
       description: 'A neatly maintained room that provides a calm environment, simple decor and a restful setting after a long day.'
     },
     {
       id: 4,
-      image: '/bedroom4.jpeg',
+      image: `${import.meta.env.BASE_URL}bedroom4.jpeg`,
       title: 'First Floor – Room 2',
       description: 'This premium room offers comfort withmtranquil atmosphere. Ideal for guests who value privacy and convenience.'
     },
     {
       id: 5,
-      image: '/bedroom5.jpeg',
+      image: `${import.meta.env.BASE_URL}bedroom5.jpeg`,
       title: 'First Floor – Room 3',
       description: 'This well appointed room offers a warm and relaxing atmosphere, ideal for both short and extended stays.'
     }

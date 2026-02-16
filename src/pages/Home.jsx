@@ -5,7 +5,7 @@ function Home() {
     <div className="flex flex-col w-full min-h-[80vh]">
       <div 
         className="flex h-screen w-full bg-cover bg-center justify-center items-center m-0 max-w-full relative"
-        style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/lali5.jpeg')` }}
+        style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('${import.meta.env.BASE_URL}lali5.jpeg')` }}
       >
         
         <div className="p-8 flex flex-col justify-center items-center text-center text-white mt-[60px]">
@@ -43,7 +43,7 @@ function Home() {
             {/* WiFi */}
             <div className="flex flex-col items-center max-w-[250px] text-center group">
                 <div className="w-24 h-24 mb-6 rounded-full p-4 bg-bg-color shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 border border-accent/20">
-                    <img src="/wifi icon.png" alt="WiFi" className="w-full h-full object-contain" />
+                    <img src={`${import.meta.env.BASE_URL}wifi icon.png`} alt="WiFi" className="w-full h-full object-contain" />
                 </div>
                 <h3 className="mb-3 text-xl text-text-primary font-serif font-semibold">WiFi</h3>
                 <p className="text-subtext text-sm leading-relaxed">We offer complimentary WiFi for Every guest.</p>
@@ -52,7 +52,7 @@ function Home() {
             {/* A/C Rooms */}
             <div className="flex flex-col items-center max-w-[250px] text-center group">
                 <div className="w-24 h-24 mb-6 rounded-full p-4 bg-bg-color shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 border border-accent/20">
-                     <img src="/ac.png" alt="A/C Rooms" className="w-full h-full object-contain" />
+                     <img src={`${import.meta.env.BASE_URL}ac.png`} alt="A/C Rooms" className="w-full h-full object-contain" />
                 </div>
                 <h3 className="mb-3 text-xl text-text-primary font-serif font-semibold">A/C Rooms</h3>
                 <p className="text-subtext text-sm leading-relaxed">All rooms are equipped with Air Condition.</p>
@@ -61,7 +61,7 @@ function Home() {
             {/* 24/7 Assistance */}
             <div className="flex flex-col items-center max-w-[250px] text-center group">
                 <div className="w-24 h-24 mb-6 rounded-full p-4 bg-bg-color shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 border border-accent/20">
-                     <img src="/twentyfourseven.png" alt="24/7 Assistance" className="w-full h-full object-contain" />
+                     <img src={`${import.meta.env.BASE_URL}twentyfourseven.png`} alt="24/7 Assistance" className="w-full h-full object-contain" />
                 </div>
                 <h3 className="mb-3 text-xl text-text-primary font-serif font-semibold">24/7 Assistance</h3>
                 <p className="text-subtext text-sm leading-relaxed">Available 24/7 to receive your call.</p>
@@ -70,7 +70,7 @@ function Home() {
             {/* Hot & Cold Water */}
             <div className="flex flex-col items-center max-w-[250px] text-center group">
                 <div className="w-24 h-24 mb-6 rounded-full p-4 bg-bg-color shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 border border-accent/20">
-                     <img src="/water.png" alt="Hot & Cold Water" className="w-full h-full object-contain" />
+                     <img src={`${import.meta.env.BASE_URL}water.png`} alt="Hot & Cold Water" className="w-full h-full object-contain" />
                 </div>
                 <h3 className="mb-3 text-xl text-text-primary font-serif font-semibold">Hot & Cold Water</h3>
                 <p className="text-subtext text-sm leading-relaxed">Enjoy uninterrupted access to both hot and cold water.</p>
@@ -79,7 +79,7 @@ function Home() {
             {/* Campfire */}
             <div className="flex flex-col items-center max-w-[250px] text-center group">
                 <div className="w-24 h-24 mb-6 rounded-full p-4 bg-bg-color shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 border border-accent/20">
-                     <img src="/campfire.png" alt="Campfire" className="w-full h-full object-contain" />
+                     <img src={`${import.meta.env.BASE_URL}campfire.png`} alt="Campfire" className="w-full h-full object-contain" />
                 </div>
                 <h3 className="mb-3 text-xl text-text-primary font-serif font-semibold">Campfire</h3>
                 <p className="text-subtext text-sm leading-relaxed">Enjoy Campfire services (on demand).</p>

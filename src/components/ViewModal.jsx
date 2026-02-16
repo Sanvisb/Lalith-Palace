@@ -4,9 +4,9 @@ function ViewModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   const views = [
-    { id: 1, image: '/view1.jpeg' },
-    { id: 2, image: '/view2.jpeg' },
-    { id: 3, image: '/view3.jpeg' }
+    { id: 1, image: `${import.meta.env.BASE_URL}view1.jpeg` },
+    { id: 2, image: `${import.meta.env.BASE_URL}view2.jpeg` },
+    { id: 3, image: `${import.meta.env.BASE_URL}view3.jpeg` }
   ];
 
   return (

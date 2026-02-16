@@ -2,13 +2,13 @@ function Posts() {
   const posts = [
     {
       id: 1,
-      video: '/video1.mp4',
+      video: `${import.meta.env.BASE_URL}video1.mp4`,
       title: 'Post 1',
       description: 'Experience the ambience of Lalith Palace.'
     },
     {
       id: 2,
-      video: '/video2.mp4',
+      video: `${import.meta.env.BASE_URL}video2.mp4`,
       title: 'Post 2',
       description: 'Host Parties at Lalith Palace.'
     }
