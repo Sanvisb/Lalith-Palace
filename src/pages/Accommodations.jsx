@@ -33,8 +33,8 @@ function Accommodations() {
   ];
 
   return (
-    <div className="p-8 md:px-16 md:py-8 max-w-[1400px] mx-auto">
-      <h1 className="text-accent font-serif text-center mb-12 text-[2.5rem]">ACCOMMODATIONS</h1>
+    <div className="px-4 py-8 md:px-16 md:py-8 max-w-[1400px] mx-auto">
+      <h1 className="text-accent font-serif text-center mb-8 md:mb-12 text-2xl md:text-[2.5rem] break-words">ACCOMMODATIONS</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {rooms.map(room => (
           <div key={room.id} className="bg-white shadow-md rounded overflow-hidden transition-transform duration-200 hover:-translate-y-1">

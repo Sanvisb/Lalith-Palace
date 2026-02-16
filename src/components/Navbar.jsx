@@ -52,6 +52,7 @@ function Navbar() {
          {/* Desktop Menu */}
          <div className="hidden md:flex gap-8 items-center">
           <NavLink to="/" className={linkClasses}>HOME</NavLink>
+          <NavLink to="/accommodations" className={linkClasses}>ACCOMMODATIONS</NavLink>
           <NavLink to="/facilities" className={linkClasses}>FACILITIES</NavLink>
           <NavLink to="/posts" className={linkClasses}>POSTS</NavLink>
           <button onClick={() => setIsViewOpen(true)} className={buttonClasses}>VIEW</button>
@@ -60,6 +61,7 @@ function Navbar() {
          {/* Mobile Menu */}
          <div className={`absolute top-20 left-0 w-full bg-white shadow-lg flex flex-col items-center gap-6 py-8 md:hidden transition-all duration-300 origin-top ${isMenuOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 h-0 overflow-hidden'}`}>
             <NavLink to="/" className={({ isActive }) => `text-text-primary ${isActive ? 'text-accent font-bold' : ''}`} onClick={() => setIsMenuOpen(false)}>HOME</NavLink>
+            <NavLink to="/accommodations" className={({ isActive }) => `text-text-primary ${isActive ? 'text-accent font-bold' : ''}`} onClick={() => setIsMenuOpen(false)}>ACCOMMODATIONS</NavLink>
             <NavLink to="/facilities" className={({ isActive }) => `text-text-primary ${isActive ? 'text-accent font-bold' : ''}`} onClick={() => setIsMenuOpen(false)}>FACILITIES</NavLink>
             <NavLink to="/posts" className={({ isActive }) => `text-text-primary ${isActive ? 'text-accent font-bold' : ''}`} onClick={() => setIsMenuOpen(false)}>POSTS</NavLink>
             <button onClick={() => { setIsViewOpen(true); setIsMenuOpen(false); }} className="text-text-primary font-semibold">VIEW</button>
