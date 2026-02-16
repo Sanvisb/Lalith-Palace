@@ -32,7 +32,7 @@ function Navbar() {
     <>
       <nav className={navClasses}>
          <div className="h-full flex items-center">
-            <img src="/logo.jpeg" alt="Lalith Palace Logo" className="h-[60px] w-[60px] object-cover rounded-full" />
+            <img src={`${import.meta.env.BASE_URL}logo.jpeg`} alt="Lalith Palace Logo" className="h-[60px] w-[60px] object-cover rounded-full" />
          </div>
          <div className="hidden md:flex gap-8 items-center">
           <NavLink to="/" className={linkClasses}>HOME</NavLink>
