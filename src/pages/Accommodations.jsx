@@ -1,3 +1,6 @@
+import React from 'react';
+import ImageModal from '../components/ImageModal';
+
 function Accommodations() {
   const rooms = [
     {
@@ -32,13 +35,18 @@ function Accommodations() {
     }
   ];
 
+  const [selectedImage, setSelectedImage] = React.useState(null);
+
   return (
     <div className="px-4 py-8 md:px-16 md:py-8 max-w-[1400px] mx-auto">
       <h1 className="text-accent font-serif text-center mb-8 md:mb-12 text-2xl md:text-[2.5rem] break-words">ACCOMMODATIONS</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {rooms.map(room => (
           <div key={room.id} className="bg-white shadow-md rounded overflow-hidden transition-transform duration-200 hover:-translate-y-1">
-            <div className="aspect-[4/3] w-full overflow-hidden bg-[#f5f5f5]">
+            <div 
+              className="aspect-[4/3] w-full overflow-hidden bg-[#f5f5f5] cursor-pointer"
+              onClick={() => setSelectedImage({ src: room.image, alt: room.title })}
+            >
                 <img src={room.image} alt={room.title} className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
             </div>
             <div className="p-6">
@@ -48,6 +56,13 @@ function Accommodations() {
           </div>
         ))}
       </div>
+
+      <ImageModal 
+        isOpen={!!selectedImage} 
+        onClose={() => setSelectedImage(null)} 
+        imageSrc={selectedImage?.src} 
+        altText={selectedImage?.alt}
+      />
     </div>
   );
 }

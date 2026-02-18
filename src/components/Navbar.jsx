@@ -55,6 +55,7 @@ function Navbar() {
           <NavLink to="/accommodations" className={linkClasses}>ACCOMMODATIONS</NavLink>
           <NavLink to="/facilities" className={linkClasses}>FACILITIES</NavLink>
           <NavLink to="/posts" className={linkClasses}>POSTS</NavLink>
+          <NavLink to="/reviews" className={linkClasses}>REVIEWS</NavLink>
           <button onClick={() => setIsViewOpen(true)} className={buttonClasses}>VIEW</button>
          </div>
 
@@ -64,6 +65,7 @@ function Navbar() {
             <NavLink to="/accommodations" className={({ isActive }) => `text-text-primary ${isActive ? 'text-accent font-bold' : ''}`} onClick={() => setIsMenuOpen(false)}>ACCOMMODATIONS</NavLink>
             <NavLink to="/facilities" className={({ isActive }) => `text-text-primary ${isActive ? 'text-accent font-bold' : ''}`} onClick={() => setIsMenuOpen(false)}>FACILITIES</NavLink>
             <NavLink to="/posts" className={({ isActive }) => `text-text-primary ${isActive ? 'text-accent font-bold' : ''}`} onClick={() => setIsMenuOpen(false)}>POSTS</NavLink>
+            <NavLink to="/reviews" className={({ isActive }) => `text-text-primary ${isActive ? 'text-accent font-bold' : ''}`} onClick={() => setIsMenuOpen(false)}>REVIEWS</NavLink>
             <button onClick={() => { setIsViewOpen(true); setIsMenuOpen(false); }} className="text-text-primary font-semibold">VIEW</button>
          </div>
       </nav>

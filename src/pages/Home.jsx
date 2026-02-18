@@ -39,7 +39,7 @@ function Home() {
 
       <div className="py-16 px-8 bg-white text-center">
         <h2 className="text-4xl mb-16 text-text-primary font-serif uppercase tracking-widest">Services We Provide</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-12 max-w-[1400px] mx-auto justify-items-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-12 max-w-[1400px] mx-auto justify-items-center">
             {/* WiFi */}
             <div className="flex flex-col items-center w-full max-w-[160px] md:max-w-[250px] text-center group">
                 <div className="w-20 h-20 md:w-24 md:h-24 mb-4 md:mb-6 rounded-full p-4 bg-bg-color shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 border border-accent/20">
@@ -83,6 +83,69 @@ function Home() {
                 </div>
                 <h3 className="mb-2 md:mb-3 text-lg md:text-xl text-text-primary font-serif font-semibold">Hot & Cold Water</h3>
                 <p className="text-subtext text-xs md:text-sm leading-relaxed">Enjoy uninterrupted access to both hot and cold water.</p>
+            </div>
+
+            {/* Barbeque */}
+            <div className="flex flex-col items-center w-full max-w-[160px] md:max-w-[250px] text-center group">
+                <div className="w-20 h-20 md:w-24 md:h-24 mb-4 md:mb-6 rounded-full p-4 bg-bg-color shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 border border-accent/20">
+                     <img src={`${import.meta.env.BASE_URL}barbeque.png`} alt="Barbeque" className="w-full h-full object-contain" />
+                </div>
+                <h3 className="mb-2 md:mb-3 text-lg md:text-xl text-text-primary font-serif font-semibold">Barbeque</h3>
+                <p className="text-subtext text-xs md:text-sm leading-relaxed">Enjoy Barbeque services (on demand).</p>
+            </div>
+
+            {/* Refrigerator */}
+            <div className="flex flex-col items-center w-full max-w-[160px] md:max-w-[250px] text-center group">
+                <div className="w-20 h-20 md:w-24 md:h-24 mb-4 md:mb-6 rounded-full p-4 bg-bg-color shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 border border-accent/20">
+                     <img src={`${import.meta.env.BASE_URL}refrigerator.png`} alt="Refrigerator" className="w-full h-full object-contain" />
+                </div>
+                <h3 className="mb-2 md:mb-3 text-lg md:text-xl text-text-primary font-serif font-semibold">Refrigerator</h3>
+                <p className="text-subtext text-xs md:text-sm leading-relaxed">Refrigerator available for use.</p>
+            </div>
+
+            {/* CareTaker */}
+             <div className="flex flex-col items-center w-full max-w-[160px] md:max-w-[250px] text-center group">
+                <div className="w-20 h-20 md:w-24 md:h-24 mb-4 md:mb-6 rounded-full p-4 bg-bg-color shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 border border-accent/20">
+                     <img src={`${import.meta.env.BASE_URL}caretaker.png`} alt="CareTaker" className="w-full h-full object-contain" />
+                </div>
+                <h3 className="mb-2 md:mb-3 text-lg md:text-xl text-text-primary font-serif font-semibold">CareTaker</h3>
+                <p className="text-subtext text-xs md:text-sm leading-relaxed">caretaker at just one call away</p>
+            </div>
+
+            {/* Electricity */}
+            <div className="flex flex-col items-center w-full max-w-[160px] md:max-w-[250px] text-center group">
+                <div className="w-20 h-20 md:w-24 md:h-24 mb-4 md:mb-6 rounded-full p-4 bg-bg-color shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 border border-accent/20">
+                     <img src={`${import.meta.env.BASE_URL}electricity.png`} alt="Electricity" className="w-full h-full object-contain" />
+                </div>
+                <h3 className="mb-2 md:mb-3 text-lg md:text-xl text-text-primary font-serif font-semibold">Electricity</h3>
+                <p className="text-subtext text-xs md:text-sm leading-relaxed">24*7 Electricity with power back up.</p>
+            </div>
+
+            {/* Washing Machine */}
+            <div className="flex flex-col items-center w-full max-w-[160px] md:max-w-[250px] text-center group">
+                <div className="w-20 h-20 md:w-24 md:h-24 mb-4 md:mb-6 rounded-full p-4 bg-bg-color shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 border border-accent/20">
+                     <img src={`${import.meta.env.BASE_URL}washingmachine.png`} alt="Washing Machine" className="w-full h-full object-contain" />
+                </div>
+                <h3 className="mb-2 md:mb-3 text-lg md:text-xl text-text-primary font-serif font-semibold">Washing Machine</h3>
+                <p className="text-subtext text-xs md:text-sm leading-relaxed">Washing Machine available for use.</p>
+            </div>
+
+            {/* Parking */}
+             <div className="flex flex-col items-center w-full max-w-[160px] md:max-w-[250px] text-center group">
+                <div className="w-20 h-20 md:w-24 md:h-24 mb-4 md:mb-6 rounded-full p-4 bg-bg-color shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 border border-accent/20">
+                     <img src={`${import.meta.env.BASE_URL}parking.png`} alt="Parking" className="w-full h-full object-contain" />
+                </div>
+                <h3 className="mb-2 md:mb-3 text-lg md:text-xl text-text-primary font-serif font-semibold">Parking</h3>
+                <p className="text-subtext text-xs md:text-sm leading-relaxed">Free Parking Facility avaialble in premises.</p>
+            </div>
+
+            {/* Events */}
+            <div className="flex flex-col items-center w-full max-w-[160px] md:max-w-[250px] text-center group">
+                <div className="w-20 h-20 md:w-24 md:h-24 mb-4 md:mb-6 rounded-full p-4 bg-bg-color shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 border border-accent/20">
+                     <img src={`${import.meta.env.BASE_URL}party.png`} alt="Events" className="w-full h-full object-contain" />
+                </div>
+                <h3 className="mb-2 md:mb-3 text-lg md:text-xl text-text-primary font-serif font-semibold">Events</h3>
+                <p className="text-subtext text-xs md:text-sm leading-relaxed">Events and parties in premises could be hosted at resonable rates.</p>
             </div>
         </div>
       </div>

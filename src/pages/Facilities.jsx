@@ -1,3 +1,6 @@
+import React from 'react';
+import ImageModal from '../components/ImageModal';
+
 function Facilities() {
     const facilities = [
         {
@@ -27,13 +30,18 @@ function Facilities() {
     }
   ];
 
+  const [selectedImage, setSelectedImage] = React.useState(null);
+
   return (
     <div className="p-8 md:px-16 md:py-8 max-w-[1400px] mx-auto">
       <h1 className="text-accent font-serif text-center mb-12 text-[2.5rem]">FACILITIES</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
          {facilities.map(item => (
           <div key={item.id} className="bg-white shadow-md rounded overflow-hidden transition-transform duration-200 hover:-translate-y-1">
-            <div className="h-[300px] overflow-hidden bg-[#f5f5f5]">
+            <div 
+              className="h-[300px] overflow-hidden bg-[#f5f5f5] cursor-pointer"
+              onClick={() => setSelectedImage({ src: item.image, alt: item.title })}
+            >
                 <img src={item.image} alt={item.title} className="w-full h-full object-contain" />
             </div>
             <div className="p-6">
@@ -43,6 +51,13 @@ function Facilities() {
           </div>
         ))}
       </div>
+
+      <ImageModal 
+        isOpen={!!selectedImage} 
+        onClose={() => setSelectedImage(null)} 
+        imageSrc={selectedImage?.src} 
+        altText={selectedImage?.alt}
+      />
     </div>
   );
 }
