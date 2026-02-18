@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 function Reviews() {
   const reviews = [
@@ -33,21 +34,57 @@ function Reviews() {
     }
   ];
 
-  return (
-    <div className="px-4 py-8 md:px-16 md:py-8 max-w-[1400px] mx-auto min-h-[60vh] flex flex-col items-center">
-      <h1 className="text-accent font-serif text-center mb-8 md:mb-16 text-2xl md:text-[2.5rem] uppercase tracking-widest">
-        Guest Reviews
-      </h1>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl w-full">
+  const itemVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  return (
+    <motion.div 
+      initial="hidden"
+      animate="visible"
+      exit={{ opacity: 0 }}
+      className="px-4 py-8 md:px-16 md:py-8 max-w-[1400px] mx-auto min-h-[60vh] flex flex-col items-center"
+    >
+      <motion.h1 
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        className="text-accent font-serif text-center mb-8 md:mb-16 text-2xl md:text-[2.5rem] uppercase tracking-widest"
+      >
+        Guest Reviews
+      </motion.h1>
+
+      <motion.div 
+        variants={containerVariants}
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl w-full"
+      >
         {reviews.map((review, index) => (
-          <div 
+          <motion.div 
             key={index} 
+            variants={itemVariants}
             className="bg-white p-8 md:p-10 shadow-lg hover:shadow-2xl transition-all duration-300 rounded-lg flex flex-col items-center text-center border border-gray-100 hover:-translate-y-2"
           >
-            <div className="mb-6 transform transition-transform duration-300 hover:scale-110">
+            <motion.div 
+              whileHover={{ rotate: 10, scale: 1.1 }}
+              className="mb-6"
+            >
               {review.logo}
-            </div>
+            </motion.div>
             
             <h2 className="text-xl md:text-2xl font-serif font-bold text-text-primary mb-4">
               {review.title}
@@ -57,26 +94,35 @@ function Reviews() {
               {review.description}
             </p>
             
-            <a 
+            <motion.a 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               href={review.link} 
               target="_blank" 
               rel="noopener noreferrer"
               className="mt-auto inline-block bg-accent hover:bg-[#8c7330] text-white font-serif font-bold py-3 px-8 rounded-sm uppercase tracking-widest transition-colors duration-300 shadow-md"
             >
               {review.cta}
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
-      <div className="mt-16 text-center max-w-2xl px-4">
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.4, duration: 0.8 }}
+        className="mt-16 text-center max-w-2xl px-4"
+      >
         <p className="text-text-primary text-lg font-serif italic mb-6">
           "We take pride in providing our guests with a comfortable and memorable stay. Your feedback helps us serve you better."
         </p>
         <div className="w-16 h-1 bg-accent mx-auto opacity-50"></div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 
 export default Reviews;
+

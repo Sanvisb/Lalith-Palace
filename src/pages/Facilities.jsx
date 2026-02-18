@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import ImageModal from '../components/ImageModal';
 
 function Facilities() {
@@ -32,25 +33,68 @@ function Facilities() {
 
   const [selectedImage, setSelectedImage] = React.useState(null);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.5 }
+    }
+  };
+
   return (
-    <div className="p-8 md:px-16 md:py-8 max-w-[1400px] mx-auto">
-      <h1 className="text-accent font-serif text-center mb-12 text-[2.5rem]">FACILITIES</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <motion.div 
+      initial="hidden"
+      animate="visible"
+      exit={{ opacity: 0 }}
+      className="p-8 md:px-16 md:py-8 max-w-[1400px] mx-auto"
+    >
+      <motion.h1 
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="text-accent font-serif text-center mb-12 text-[2.5rem]"
+      >
+        FACILITIES
+      </motion.h1>
+      <motion.div 
+        variants={containerVariants}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
          {facilities.map(item => (
-          <div key={item.id} className="bg-white shadow-md rounded overflow-hidden transition-transform duration-200 hover:-translate-y-1">
+          <motion.div 
+            key={item.id} 
+            variants={itemVariants}
+            className="bg-white shadow-md rounded overflow-hidden transition-shadow duration-300 hover:shadow-xl"
+          >
             <div 
               className="h-[300px] overflow-hidden bg-[#f5f5f5] cursor-pointer"
               onClick={() => setSelectedImage({ src: item.image, alt: item.title })}
             >
-                <img src={item.image} alt={item.title} className="w-full h-full object-contain" />
+                <motion.img 
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                  src={item.image} 
+                  alt={item.title} 
+                  className="w-full h-full object-contain" 
+                />
             </div>
             <div className="p-6">
                 <h3 className="mb-2 text-text-primary font-serif text-xl font-semibold">{item.title}</h3>
                 <p className="text-subtext text-sm leading-relaxed">{item.description}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       <ImageModal 
         isOpen={!!selectedImage} 
@@ -58,8 +102,9 @@ function Facilities() {
         imageSrc={selectedImage?.src} 
         altText={selectedImage?.alt}
       />
-    </div>
+    </motion.div>
   );
 }
 
 export default Facilities;
+

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 function Booking() {
   const [fromDate, setFromDate] = useState('');
@@ -30,16 +31,36 @@ Travelling with pets: ${hasPets ? 'Yes' : 'No'}
   };
 
   return (
-    <div className="flex flex-col w-full min-h-screen pt-24 bg-bg-color items-center">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="flex flex-col w-full min-h-screen pt-24 bg-bg-color items-center"
+    >
       <div className="w-full max-w-4xl px-4 py-6">
-        <h1 className="text-4xl text-center font-serif text-text-primary mb-2 uppercase tracking-widest">
+        <motion.h1 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl text-center font-serif text-text-primary mb-2 uppercase tracking-widest"
+        >
           Book Your Stay
-        </h1>
-        <p className="text-center text-subtext mb-12 font-sans">
+        </motion.h1>
+        <motion.p 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-center text-subtext mb-12 font-sans"
+        >
           Plan your perfect getaway at Lalith Palace
-        </p>
+        </motion.p>
 
-        <div className="bg-white p-8 rounded-lg shadow-lg border border-accent/20">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="bg-white p-8 rounded-lg shadow-lg border border-accent/20"
+        >
           <form onSubmit={handleSubmit} className="flex flex-col gap-6">
             
             {/* Date Selection */}
@@ -99,21 +120,24 @@ Travelling with pets: ${hasPets ? 'Yes' : 'No'}
             </div>
 
             {/* Submit Button */}
-            <button
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               type="submit"
               className="mt-4 bg-accent hover:bg-[#8c7330] text-white font-serif font-bold py-4 px-8 rounded-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl text-center w-full"
             >
               Check Availability via WhatsApp
-            </button>
+            </motion.button>
             
             <p className="text-center text-xs text-subtext mt-2">
               * This will open WhatsApp to send your booking details directly to us.
             </p>
           </form>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 export default Booking;
+

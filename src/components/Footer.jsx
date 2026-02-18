@@ -1,9 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 function Footer() {
   return (
-    <footer className="bg-text-primary text-white py-12 px-8">
+    <motion.footer 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1 }}
+      className="bg-text-primary text-white py-12 px-8"
+    >
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
         
         {/* Brand Section */}
@@ -46,8 +53,9 @@ function Footer() {
       <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-500 text-xs">
         <p>&copy; {new Date().getFullYear()} Lalith Palace. All rights reserved.</p>
       </div>
-    </footer>
+    </motion.footer>
   );
 }
 
 export default Footer;
+
